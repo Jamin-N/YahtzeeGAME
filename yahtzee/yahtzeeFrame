@@ -1,0 +1,546 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
+package yahtzee;
+
+import java.util.stream.IntStream;
+
+
+
+/**
+ *
+ * @author 9506892
+ */
+public class yahtzeeFrame extends javax.swing.JFrame {
+
+    /**
+     * Creates new form yahtzeeFrame
+     */
+    
+    boolean active1 = true;
+    boolean active2 = true;
+    boolean active3 = true;
+    boolean active4 = true;
+    boolean active5 = true;
+    
+    int die1, die2, die3, die4, die5;
+    
+    int[] numbers = new int[5];
+    
+    public yahtzeeFrame() {
+        initComponents();
+    }
+    
+    public void roll1() {
+        
+        die1 = (int) (Math.random() *6 +1);
+        
+        switch (die1) {
+            case 1:
+                labelDie1.setIcon(new javax.swing.ImageIcon("M:\\die_face_1.png"));
+                break;
+            case 2:
+                labelDie1.setIcon(new javax.swing.ImageIcon("M:\\die_face_2.png"));
+                break;
+            case 3:
+                labelDie1.setIcon(new javax.swing.ImageIcon("M:\\die_face_3.png"));
+                break;
+            case 4:
+                labelDie1.setIcon(new javax.swing.ImageIcon("M:\\die_face_4.png"));
+                break;
+            case 5:
+                labelDie1.setIcon(new javax.swing.ImageIcon("M:\\die_face_5.png"));
+                break;
+            case 6:
+                labelDie1.setIcon(new javax.swing.ImageIcon("M:\\die_face_6.png"));
+                break;
+            default:
+             
+                
+        }
+    }
+    
+    public void roll2() {
+        
+        die2 = (int) (Math.random() *6 +1);
+        
+        switch (die2) {
+            case 1:
+                labelDie2.setIcon(new javax.swing.ImageIcon("M:\\die_face_1.png"));
+                break;
+            case 2:
+                labelDie2.setIcon(new javax.swing.ImageIcon("M:\\die_face_2.png"));
+                break;
+            case 3:
+                labelDie2.setIcon(new javax.swing.ImageIcon("M:\\die_face_3.png"));
+                break;
+            case 4:
+                labelDie2.setIcon(new javax.swing.ImageIcon("M:\\die_face_4.png"));
+                break;
+            case 5:
+                labelDie2.setIcon(new javax.swing.ImageIcon("M:\\die_face_5.png"));
+                break;
+            case 6:
+                labelDie2.setIcon(new javax.swing.ImageIcon("M:\\die_face_6.png"));
+                break;
+            default:
+            
+        }        
+    }
+    
+    public void roll3() {
+        die3 = (int) (Math.random() *6 +1);
+        
+        switch (die3) {
+            case 1:
+                labelDie3.setIcon(new javax.swing.ImageIcon("M:\\die_face_1.png"));
+                break;
+            case 2:
+                labelDie3.setIcon(new javax.swing.ImageIcon("M:\\die_face_2.png"));
+                break;
+            case 3:
+                labelDie3.setIcon(new javax.swing.ImageIcon("M:\\die_face_3.png"));
+                break;
+            case 4:
+                labelDie3.setIcon(new javax.swing.ImageIcon("M:\\die_face_4.png"));
+                break;
+            case 5:
+                labelDie3.setIcon(new javax.swing.ImageIcon("M:\\die_face_5.png"));
+                break;
+            case 6:
+                labelDie3.setIcon(new javax.swing.ImageIcon("M:\\die_face_6.png"));
+                break;
+            default:
+             
+        }
+    }
+    
+    public void roll4() {
+        die4 = (int) (Math.random() *6 +1);
+        
+        switch (die4) {
+            case 1:
+                labelDie4.setIcon(new javax.swing.ImageIcon("M:\\die_face_1.png"));
+                break;
+            case 2:
+                labelDie4.setIcon(new javax.swing.ImageIcon("M:\\die_face_2.png"));
+                break;
+            case 3:
+                labelDie4.setIcon(new javax.swing.ImageIcon("M:\\die_face_3.png"));
+                break;
+            case 4:
+                labelDie4.setIcon(new javax.swing.ImageIcon("M:\\die_face_4.png"));
+                break;
+            case 5:
+                labelDie4.setIcon(new javax.swing.ImageIcon("M:\\die_face_5.png"));
+                break;
+            case 6:
+                labelDie4.setIcon(new javax.swing.ImageIcon("M:\\die_face_6.png"));
+                break;
+            default:
+              
+        }       
+    }
+    
+    public void roll5() {
+        die5 = (int) (Math.random() *6 +1);
+        
+        switch (die5) {
+            case 1:
+                labelDie5.setIcon(new javax.swing.ImageIcon("M:\\die_face_1.png"));
+                break;
+            case 2:
+                labelDie5.setIcon(new javax.swing.ImageIcon("M:\\die_face_2.png"));
+                break;
+            case 3:
+                labelDie5.setIcon(new javax.swing.ImageIcon("M:\\die_face_3.png"));
+                break;
+            case 4:
+                labelDie5.setIcon(new javax.swing.ImageIcon("M:\\die_face_4.png"));
+                break;
+            case 5:
+                labelDie5.setIcon(new javax.swing.ImageIcon("M:\\die_face_5.png"));
+                break;
+            case 6:
+                labelDie5.setIcon(new javax.swing.ImageIcon("M:\\die_face_6.png"));
+                break;
+            default:
+          
+        }  
+        
+    }
+    
+
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        labelDie1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        labelDie3 = new javax.swing.JLabel();
+        labelDie4 = new javax.swing.JLabel();
+        labelDie5 = new javax.swing.JLabel();
+        labelDie2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        buttonAces = new javax.swing.JButton();
+        buttonTwos = new javax.swing.JButton();
+        buttonThrees = new javax.swing.JButton();
+        buttonFours = new javax.swing.JButton();
+        buttonFives = new javax.swing.JButton();
+        buttonSixes = new javax.swing.JButton();
+        button3Kind = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        buttonYahtzee = new javax.swing.JButton();
+        buttonChance = new javax.swing.JButton();
+        labelChoose = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        labelBack = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("mainFrame");
+        setBackground(new java.awt.Color(0, 102, 0));
+        setPreferredSize(new java.awt.Dimension(851, 520));
+        getContentPane().setLayout(null);
+
+        labelDie1.setText("1");
+        labelDie1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelDie1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(labelDie1);
+        labelDie1.setBounds(20, 400, 70, 70);
+
+        jButton1.setText("ROLL");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(370, 120, 80, 30);
+
+        labelDie3.setText("1");
+        labelDie3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelDie3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(labelDie3);
+        labelDie3.setBounds(220, 400, 70, 70);
+
+        labelDie4.setText("1");
+        labelDie4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelDie4MouseClicked(evt);
+            }
+        });
+        getContentPane().add(labelDie4);
+        labelDie4.setBounds(320, 400, 70, 70);
+
+        labelDie5.setText("1");
+        labelDie5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelDie5MouseClicked(evt);
+            }
+        });
+        getContentPane().add(labelDie5);
+        labelDie5.setBounds(410, 400, 70, 70);
+
+        labelDie2.setText("1");
+        labelDie2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelDie2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(labelDie2);
+        labelDie2.setBounds(120, 400, 70, 70);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("M:\\yahtzee.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(270, 0, 290, 110);
+
+        buttonAces.setText("ACES");
+        buttonAces.setEnabled(false);
+        getContentPane().add(buttonAces);
+        buttonAces.setBounds(590, 40, 70, 30);
+
+        buttonTwos.setText("TWOS");
+        buttonTwos.setEnabled(false);
+        getContentPane().add(buttonTwos);
+        buttonTwos.setBounds(590, 63, 70, 30);
+
+        buttonThrees.setText("THREES");
+        buttonThrees.setEnabled(false);
+        getContentPane().add(buttonThrees);
+        buttonThrees.setBounds(590, 90, 70, 23);
+
+        buttonFours.setText("FOURS");
+        buttonFours.setEnabled(false);
+        getContentPane().add(buttonFours);
+        buttonFours.setBounds(590, 110, 70, 30);
+
+        buttonFives.setText("FIVES");
+        buttonFives.setEnabled(false);
+        getContentPane().add(buttonFives);
+        buttonFives.setBounds(590, 137, 70, 23);
+
+        buttonSixes.setText("SIXES");
+        buttonSixes.setEnabled(false);
+        getContentPane().add(buttonSixes);
+        buttonSixes.setBounds(590, 153, 70, 30);
+
+        button3Kind.setText("3 OF A KIND");
+        button3Kind.setEnabled(false);
+        getContentPane().add(button3Kind);
+        button3Kind.setBounds(590, 200, 110, 30);
+
+        jButton9.setText("4 OF A KIND");
+        jButton9.setEnabled(false);
+        getContentPane().add(jButton9);
+        jButton9.setBounds(590, 223, 110, 30);
+
+        jButton10.setText("FULL HOUSE");
+        jButton10.setEnabled(false);
+        getContentPane().add(jButton10);
+        jButton10.setBounds(590, 250, 110, 23);
+
+        jButton11.setText("SM. STRAIGHT");
+        jButton11.setEnabled(false);
+        getContentPane().add(jButton11);
+        jButton11.setBounds(590, 270, 110, 30);
+
+        jButton12.setText("LG. STRAIGHT");
+        jButton12.setEnabled(false);
+        getContentPane().add(jButton12);
+        jButton12.setBounds(590, 293, 110, 30);
+
+        buttonYahtzee.setText("YAHTZEE");
+        buttonYahtzee.setEnabled(false);
+        getContentPane().add(buttonYahtzee);
+        buttonYahtzee.setBounds(590, 320, 110, 23);
+
+        buttonChance.setText("CHANCE");
+        buttonChance.setEnabled(false);
+        getContentPane().add(buttonChance);
+        buttonChance.setBounds(590, 340, 110, 30);
+
+        labelChoose.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
+        labelChoose.setForeground(new java.awt.Color(204, 255, 102));
+        labelChoose.setText("Click the dice you want to keep. Then roll again when ready");
+        getContentPane().add(labelChoose);
+        labelChoose.setBounds(10, 370, 530, 20);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("M:\\yahtzeescoretop_360.jpg")); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(580, 0, 200, 200);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("M:\\yahtzeescorebottom_360.jpg")); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(580, 200, 210, 170);
+
+        labelBack.setForeground(new java.awt.Color(0, 255, 204));
+        labelBack.setIcon(new javax.swing.ImageIcon("M:\\green2.jpg")); // NOI18N
+        labelBack.setName(""); // NOI18N
+        getContentPane().add(labelBack);
+        labelBack.setBounds(0, 0, 850, 480);
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+
+    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (active1) {
+        roll1();
+        }
+        
+        if (active2) {
+        roll2();
+        }
+        
+        if (active3) {
+        roll3();
+        }
+        
+        if (active4) {
+        roll4();
+        }
+        
+        if (active5) {
+        roll5();
+        }
+               
+    }//GEN-LAST:event_jButton1ActionPerformed
+   
+    private void labelDie1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelDie1MouseClicked
+        // TODO add your handling code here:
+        if (active1){
+        labelDie1.setLocation(20, 290);
+        active1 = false;
+        numbers[0] = die1;
+        test();
+        }
+        else if (active1 == false) {
+            labelDie1.setLocation(20, 400);
+            active1 = true;
+        }
+    }//GEN-LAST:event_labelDie1MouseClicked
+
+    private void labelDie2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelDie2MouseClicked
+        // TODO add your handling code here:
+        if (active2) {
+            labelDie2.setLocation(120, 290);
+            active2 = false;
+            numbers[1] = die2;
+            test();
+        }
+        else if (active2 == false){
+            labelDie2.setLocation(120, 400);
+            active2 = true;
+        }
+    }//GEN-LAST:event_labelDie2MouseClicked
+
+    private void labelDie3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelDie3MouseClicked
+        // TODO add your handling code here:
+        if (active3) {
+        labelDie3.setLocation(220, 290);
+        active3 = false;
+        numbers[2] = die3;
+        test();
+        }
+        else if (active3 == false) {
+            labelDie3.setLocation(220, 400);
+            active3 = true;
+        }
+    }//GEN-LAST:event_labelDie3MouseClicked
+
+    private void labelDie4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelDie4MouseClicked
+        // TODO add your handling code here:
+        if (active4) {
+        labelDie4.setLocation(320, 290);
+        active4 = false;
+        numbers[3] = die4;
+        test();
+        }
+        else if (active4 == false){
+            labelDie4.setLocation(320, 400);
+            active4 = true;
+        }
+    }//GEN-LAST:event_labelDie4MouseClicked
+
+    private void labelDie5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelDie5MouseClicked
+        // TODO add your handling code here:
+        if (active5) {
+        labelDie5.setLocation(420, 290);
+        active5 = false;
+        numbers[4] = die5;
+        test();
+        }
+        else if (active4 == false){
+            labelDie5.setLocation(420, 400);
+            active5 = true;
+        }
+    }//GEN-LAST:event_labelDie5MouseClicked
+
+    public void test() {
+    boolean contains1 = IntStream.of(numbers).anyMatch(x -> x == 1);
+        if (contains1) {
+            buttonAces.setEnabled(true);
+        }
+         boolean contains2 = IntStream.of(numbers).anyMatch(x -> x == 2);
+        if (contains2) {
+            buttonTwos.setEnabled(true);
+        }
+         boolean contains3 = IntStream.of(numbers).anyMatch(x -> x == 3);
+        if (contains3) {
+            buttonThrees.setEnabled(true);
+        }
+         boolean contains4 = IntStream.of(numbers).anyMatch(x -> x == 4);
+        if (contains4) {
+            buttonFours.setEnabled(true);
+        }
+         boolean contains5 = IntStream.of(numbers).anyMatch(x -> x == 5);
+        if (contains5) {
+            buttonFives.setEnabled(true);
+        }
+         boolean contains6 = IntStream.of(numbers).anyMatch(x -> x == 6);
+        if (contains6) {
+            buttonSixes.setEnabled(true);
+        }
+    }
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(yahtzeeFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(yahtzeeFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(yahtzeeFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(yahtzeeFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new yahtzeeFrame().setVisible(true);
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton button3Kind;
+    private javax.swing.JButton buttonAces;
+    private javax.swing.JButton buttonChance;
+    private javax.swing.JButton buttonFives;
+    private javax.swing.JButton buttonFours;
+    private javax.swing.JButton buttonSixes;
+    private javax.swing.JButton buttonThrees;
+    private javax.swing.JButton buttonTwos;
+    private javax.swing.JButton buttonYahtzee;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel labelBack;
+    private javax.swing.JLabel labelChoose;
+    private javax.swing.JLabel labelDie1;
+    private javax.swing.JLabel labelDie2;
+    private javax.swing.JLabel labelDie3;
+    private javax.swing.JLabel labelDie4;
+    private javax.swing.JLabel labelDie5;
+    // End of variables declaration//GEN-END:variables
+}
